@@ -67,7 +67,7 @@ namespace xadrez
                 mat[pos.linha, pos.coluna] = true;
             }
 
-            //diagonal inferior direita
+            //diagonal direita inferior 
             pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
             if(tab.posicaoValida(pos) && podeMover(pos))
             {
