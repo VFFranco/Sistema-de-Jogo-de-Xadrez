@@ -2,9 +2,11 @@
 
 namespace xadrez
 {
+
     class Bispo : Peca
     {
-        public Bispo (Tabuleiro tab, Cor cor) : base (tab, cor)
+
+        public Bispo(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
         }
 
@@ -19,7 +21,7 @@ namespace xadrez
             return p == null || p.cor != cor;
         }
 
-        public override bool [,] movimentosPossiveis()
+        public override bool[,] movimentosPossiveis()
         {
             bool[,] mat = new bool[tab.linhas, tab.colunas];
 
@@ -34,7 +36,7 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
+                pos.definirValores(pos.linha - 1, pos.coluna - 1);
             }
 
             //diagonal direita superior
@@ -46,10 +48,10 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
+                pos.definirValores(pos.linha - 1, pos.coluna + 1);
             }
 
-            //diagonal direita inferior
+            //diagonal direita inferio
             pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -58,7 +60,7 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
+                pos.definirValores(pos.linha + 1, pos.coluna + 1);
             }
 
             //diagonal inferior esquerda
@@ -70,7 +72,7 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
+                pos.definirValores(pos.linha + 1, pos.coluna - 1);
             }
 
             return mat;
